@@ -16,7 +16,6 @@ const NODE_MODULES_DIR = path.resolve(__dirname, './node_modules')
 const theme = lessToJs(
   fs.readFileSync(path.join(APP_DIR, 'override.less'), 'utf8')
 ) // Load less override variables
-theme['@icon-url'] = `${BUILD_DIR}/assets/iconfont`
 
 module.exports = {
   mode: 'development',
@@ -73,11 +72,6 @@ module.exports = {
       //   include: `${APP_DIR}/assets/images`,
       //   loader: 'file-loader?name=public/assets/[name].[hash].[ext]'
       // },
-      {
-        test: /\.mp3$/,
-        include: `${APP_DIR}/assets/sounds`,
-        loader: `file-loader?name=assets/sounds/[name].[ext]`
-      }
     ]
   },
   optimization: {

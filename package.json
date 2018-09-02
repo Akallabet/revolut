@@ -86,11 +86,15 @@
   "jest": {
     "roots": [
       "<rootDir>/test/",
-      "<rootDir>/src/"
+      "<rootDir>/src/",
+      "<rootDir>/mocks/"
     ],
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/"
     ],
+    "moduleNameMapper": {
+      "antd": "<rootDir>/mocks/antd/index.js"
+    },
     "setupFiles": [
       "<rootDir>/jest-configs/setup-tests.js"
     ],
