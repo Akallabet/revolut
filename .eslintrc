@@ -1,0 +1,24 @@
+{
+  "extends":[
+    "standard",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "browser": true,
+    "node": false
+  },
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.test.js",
+        "test/**/*.test.js"
+      ],
+      "env": {
+          "jest": true
+      }
+    }
+  ]
+}
