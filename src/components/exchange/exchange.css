@@ -1,17 +1,17 @@
-.exchange-from {
+.exchange {
   display: flex;
   flex-direction: row;
 }
 
-.exchange-from>div {
+.exchange>div {
   flex: 1 auto;
 }
 
-.exchange-from .exchange-currency {
+.exchange .exchange-currency {
   order: 1;
 }
 
-.exchange-from .exchange-amount {
+.exchange .exchange-amount {
   order: 2;
   text-align: right;
 }

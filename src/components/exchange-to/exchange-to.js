@@ -1,8 +1,21 @@
 import React from 'react'
-import './exchange-to.css'
+import { shape, number, string } from 'prop-types'
+import Exchange from '../exchange/exchange'
 
-const ExchangeTo = () => (
-  <div>ExchangeTo component</div>
+const ExchangeTo = ({exchangeTo: {currency, amount}}) => (
+  <div className='exchange-to'>
+    <Exchange
+      currency={currency}
+      amount={amount}
+    />
+  </div>
 )
+
+ExchangeTo.propTypes = {
+  exchangeTo: shape({
+    currency: string.isRequired,
+    amount: number.isRequired
+  })
+}
 
 export default ExchangeTo

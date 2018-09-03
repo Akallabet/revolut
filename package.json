@@ -11,7 +11,8 @@
     "start": "webpack-dev-server",
     "build": "webpack -p --config webpack.config.js",
     "build:ci": "webpack -p --mode=production --config webpack.config.js",
-    "test": "jest --coverage --watchAll",
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watchAll",
     "test:ci": "jest --coverage",
     "precommit": "npm run test:ci && npm run lint"
   },
@@ -93,7 +94,8 @@
       "<rootDir>/node_modules/"
     ],
     "moduleNameMapper": {
-      "antd": "<rootDir>/mocks/antd/index.js"
+      "antd": "<rootDir>/mocks/antd/index.js",
+      "\\.(css|scss)$": "<rootDir>/mocks/style-mock.js"
     },
     "setupFiles": [
       "<rootDir>/jest-configs/setup-tests.js"
