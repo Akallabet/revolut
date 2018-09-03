@@ -2,7 +2,7 @@ import React from 'react'
 import {shallow} from 'enzyme'
 import {InputNumber, Dropdown} from 'antd'
 import {CURRENCY_CODES} from '../src/constants'
-import CurrencyDropdown from '../src/components/currency-dropdown/currency-dropdown-container'
+import CurrencySelection from '../src/components/currency-selection/currency-selection-container'
 import Exchange from '../src/components/exchange/exchange'
 import ExchangeFrom from '../src/components/exchange-from/exchange-from'
 
@@ -30,11 +30,10 @@ describe('Exchange From', () => {
       expect(wrapper.find(InputNumber).props().defaultValue).toEqual(0)
     })
 
-    describe('Currencies dropdown', () => {
+    describe('Currencies selection', () => {
       let currency
       beforeAll(() => {
-        currency = wrapper.find(CurrencyDropdown)
-        console.log(wrapper.debug())
+        currency = wrapper.find(CurrencySelection)
       })
       it('I should see a list of available countries when click on the currency code', () => {
         expect(currency).toHaveLength(1)

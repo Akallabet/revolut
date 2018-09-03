@@ -1,15 +1,15 @@
 import React from 'react'
 import { number, string } from 'prop-types'
 import { InputNumber } from 'antd'
-import CurrencyDropdown from '../currency-dropdown/currency-dropdown-container'
+import CurrencySelection from '../currency-selection/currency-selection-container'
 import './exchange.css'
 
 const Exchange = ({currency, amount, sign}) => (
   <div className='exchange'>
     <div className='exchange-currency'>
       <div className='js-currency'>
-        <CurrencyDropdown
-          defaultValue={currency}
+        <CurrencySelection
+          currency={currency}
         />
       </div>
       <div className='js-balance'>

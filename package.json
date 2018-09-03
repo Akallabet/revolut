@@ -98,7 +98,7 @@
       "<rootDir>/src"
     ],
     "transformIgnorePatterns": [
-      "/node_modules/(?!antd|css-animation|rc-pagination|rc-calendar)"
+      "/node_modules/(?!antd|css-animation|rc-pagination|rc-calendar|rc-util)"
     ],
     "setupFiles": [
       "<rootDir>/jest-configs/setup-tests.js"
