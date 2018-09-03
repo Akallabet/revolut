@@ -4,7 +4,7 @@ import {
 } from '../app/app-actions'
 
 const defState = {
-  currency: CURRENCY_CODES.USD,
+  currency: CURRENCY_CODES.EUR,
   amount: 0.00
 }
 

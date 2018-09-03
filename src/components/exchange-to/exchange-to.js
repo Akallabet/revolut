@@ -7,6 +7,7 @@ const ExchangeTo = ({exchangeTo: {currency, amount}}) => (
     <Exchange
       currency={currency}
       amount={amount}
+      sign='+'
     />
   </div>
 )

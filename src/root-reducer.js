@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux'
 
+import EurFlag from '../assets/images/EUR.svg'
+import UsdFlag from '../assets/images/USD.svg'
+import GbpFlag from '../assets/images/GBP.svg'
+
 import { CURRENCY_CODES } from './constants'
 import exchangeFrom from './components/exchange-from/exchange-from-reducer'
 import exchangeTo from './components/exchange-to/exchange-to-reducer'
@@ -14,16 +18,16 @@ const defCurrencyCodes = {
 
 const defAvailableCurrencies = [{
   code: EUR,
-  flag: '',
-  balance: 0.00
+  flag: EurFlag,
+  balance: '0.00'
 }, {
   code: USD,
-  flag: '',
-  balance: 0.00
+  flag: UsdFlag,
+  balance: '0.00'
 }, {
   code: GBP,
-  flag: '',
-  balance: 0.00
+  flag: GbpFlag,
+  balance: '0.00'
 }]
 
 const currencyCodes = (state = defCurrencyCodes) =>

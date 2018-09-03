@@ -1,12 +1,16 @@
 import React from 'react'
 import { number, string } from 'prop-types'
+import { InputNumber } from 'antd'
+import CurrencyDropdown from '../currency-dropdown/currency-dropdown-container'
 import './exchange.css'
 
-const Exchange = ({currency, amount}) => (
+const Exchange = ({currency, amount, sign}) => (
   <div className='exchange'>
     <div className='exchange-currency'>
       <div className='js-currency'>
-        {currency}
+        <CurrencyDropdown
+          defaultValue={currency}
+        />
       </div>
       <div className='js-balance'>
         balance
@@ -14,7 +18,10 @@ const Exchange = ({currency, amount}) => (
     </div>
     <div className='exchange-amount'>
       <div className='js-amount'>
-        {amount}
+        <InputNumber
+          defaultValue={amount}
+          formatter={value => value > 0 ? `${sign} ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : value}
+        />
       </div>
     </div>
   </div>
@@ -22,7 +29,8 @@ const Exchange = ({currency, amount}) => (
 
 Exchange.propTypes = {
   currency: string.isRequired,
-  amount: number.isRequired
+  amount: number.isRequired,
+  sign: string
 }
 
 export default Exchange

@@ -8,6 +8,7 @@ const ExchangeFrom = ({exchangeFrom: {currency, amount}}) => (
       className='exchange-to'
       currency={currency}
       amount={amount}
+      sign='-'
     />
   </div>
 )

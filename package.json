@@ -34,6 +34,7 @@
   "homepage": "https://github.com/Akallabet/revolut#readme",
   "dependencies": {
     "antd": "^3.6.1",
+    "axios": "^0.18.0",
     "path": "^0.12.7",
     "prop-types": "^15.6.0",
     "react": "^16.4.0",
@@ -86,17 +87,19 @@
   },
   "jest": {
     "roots": [
-      "<rootDir>/test/",
+      "<rootDir>/__test__/",
       "<rootDir>/src/",
-      "<rootDir>/mocks/"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/node_modules/"
+      "<rootDir>/__mocks__/"
     ],
     "moduleNameMapper": {
-      "antd": "<rootDir>/mocks/antd/index.js",
-      "\\.(css|scss)$": "<rootDir>/mocks/style-mock.js"
+      "\\.(css|scss|less)$": "<rootDir>/__mocks__/style-mock.js"
     },
+    "modulePaths": [
+      "<rootDir>/src"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!antd|css-animation|rc-pagination|rc-calendar)"
+    ],
     "setupFiles": [
       "<rootDir>/jest-configs/setup-tests.js"
     ],

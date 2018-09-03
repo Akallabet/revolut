@@ -14,7 +14,7 @@
     {
       "files": [
         "src/**/*.test.js",
-        "test/**/*.test.js"
+        "__test__/**/*.test.js"
       ],
       "env": {
           "jest": true

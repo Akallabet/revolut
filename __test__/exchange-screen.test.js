@@ -13,7 +13,6 @@ describe('Exchange Screen', () => {
     beforeAll(() => {
       wrapper = shallow(<App/>)
     })
-
     it('I should see the title', () => {
       expect(wrapper.find(ExchangeHeader)).toHaveLength(1)
     })
