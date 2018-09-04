@@ -12,12 +12,6 @@ const Content = Layout.Content
 const Footer = Layout.Footer
 
 class App extends React.Component {
-  // componentDidMount () {
-  //   const {currencyCodes, setExchangeFrom, setExchangeTo} = this.props
-  //   setExchangeFrom(currencyCodes.EUR)
-  //   setExchangeTo(currencyCodes.USD)
-  // }
-
   render () {
     return (
       <div>

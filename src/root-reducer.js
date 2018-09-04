@@ -27,7 +27,7 @@ const defAvailableCurrencies = [{
 }, {
   code: GBP,
   flag: GbpFlag,
-  balance: '0.00'
+  balance: '1.00'
 }]
 
 const currencyCodes = (state = defCurrencyCodes) =>
