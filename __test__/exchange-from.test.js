@@ -1,15 +1,18 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import {InputNumber, Dropdown} from 'antd'
-import {CURRENCY_CODES} from '../src/constants'
+import {InputNumber} from 'antd'
+import availableCurrencies from '../__mocks__/available-currencies'
 import CurrencySelection from '../src/components/currency-selection/currency-selection-container'
+import ExchangeContainer from '../src/components/exchange/exchange-container'
 import Exchange from '../src/components/exchange/exchange'
 import ExchangeFrom from '../src/components/exchange-from/exchange-from'
 
 describe('Exchange From', () => {
   const props = {
     currency: 'EUR',
-    amount: 0.00
+    amount: 0.00,
+    availableCurrencies,
+    currencySymbols: {}
   }
   describe('Exchange Component', () => {
     let wrapper
@@ -47,10 +50,10 @@ describe('Exchange From', () => {
     })
 
     it('I should see the amount witha negative sign', () => {
-      const compProps = wrapper.find(Exchange).props()
+      const compProps = wrapper.find(ExchangeContainer).props()
       expect(compProps.amount).toEqual(props.amount)
       expect(compProps.currency).toEqual(props.currency)
-      expect(wrapper.find(Exchange).props().sign).toEqual('-')
+      expect(compProps.sign).toEqual('-')
     })
   })
 })

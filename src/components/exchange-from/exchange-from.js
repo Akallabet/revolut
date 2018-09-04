@@ -1,6 +1,6 @@
 import React from 'react'
 import { shape, number, string, func } from 'prop-types'
-import Exchange from '../exchange/exchange'
+import Exchange from '../exchange/exchange-container'
 
 const ExchangeFrom = ({exchangeFrom: {currency, amount}, setExchangeFrom}) => (
   <div className='exchange-from'>

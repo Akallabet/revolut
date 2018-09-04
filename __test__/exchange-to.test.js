@@ -1,6 +1,6 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import Exchange from '../src/components/exchange/exchange'
+import Exchange from '../src/components/exchange/exchange-container'
 import ExchangeTo from '../src/components/exchange-to/exchange-to'
 
 describe('Exchange To', () => {
