@@ -1,7 +1,7 @@
 import {CURRENCY_CODES} from '../../constants'
 import {
   SET_EXCHANGE_FROM
-} from '../app/app-actions'
+} from './exchange-from-actions'
 
 const defState = {
   currency: CURRENCY_CODES.EUR,

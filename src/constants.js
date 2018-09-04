@@ -2,6 +2,8 @@ import EurFlag from '../assets/images/EUR.svg'
 import UsdFlag from '../assets/images/USD.svg'
 import GbpFlag from '../assets/images/GBP.svg'
 
+export const POLLING = 600000
+
 const EUR = 'EUR'
 const USD = 'USD'
 const GBP = 'GBP'
@@ -37,3 +39,9 @@ export const AVAILABLE_CURRENCIES = [{
   flag: GbpFlag,
   balance: '1.00'
 }]
+
+export const EXHCANGE_RATES = {
+  EUR: {},
+  USD: {},
+  GBP: {}
+}
