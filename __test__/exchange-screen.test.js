@@ -5,7 +5,7 @@ import ExchangeHeader from '../src/components/exchange-header/exchange-header-co
 import ExchangeFrom from '../src/components/exchange-from/exchange-from-container'
 import ExchangeTo from '../src/components/exchange-to/exchange-to-container'
 import ExchangeRate from '../src/components/exchange-rate/exchange-rate-container'
-import SwitchRatesButton from '../src/components/switch-rates-button/switch-rates-button-container'
+import SwitchCurrencies from '../src/components/switch-currencies/switch-currencies-container'
 
 describe('Exchange Screen', () => {
   describe('Main component', () => {
@@ -26,7 +26,7 @@ describe('Exchange Screen', () => {
       expect(wrapper.find(ExchangeRate)).toHaveLength(1)
     })
     it('I should see the \'switch\' button', () => {
-      expect(wrapper.find(SwitchRatesButton)).toHaveLength(1)
+      expect(wrapper.find(SwitchCurrencies)).toHaveLength(1)
     })
   })
 })

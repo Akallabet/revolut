@@ -92,7 +92,7 @@
       "<rootDir>/__mocks__/"
     ],
     "moduleNameMapper": {
-      "\\.(css|scss|less)$": "<rootDir>/__mocks__/style-mock.js"
+      "\\.(css|scss|less|svg)$": "<rootDir>/__mocks__/style-mock.js"
     },
     "modulePaths": [
       "<rootDir>/src"

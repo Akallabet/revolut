@@ -1,7 +1,8 @@
 import { connect } from 'react-redux'
 import ExchangeRate from './exchange-rate'
 
-const mapStateToProps = null
+const mapStateToProps = ({exchangeFrom, exchangeTo, availableCurrencies, currencySymbols}) =>
+  ({availableCurrencies, exchangeFrom, exchangeTo, currencySymbols})
 const mapDispatchToProps = null
 
 const ExchangeRateContainer = connect(mapStateToProps, mapDispatchToProps)(ExchangeRate)

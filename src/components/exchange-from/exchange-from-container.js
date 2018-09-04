@@ -1,15 +1,13 @@
 import { connect } from 'react-redux'
 import ExchangeFrom from './exchange-from'
 import {
-  setExchangeFrom
+  changeCurrency
 } from './exchange-from-actions'
 
 const mapStateToProps = ({exchangeFrom}) => ({exchangeFrom})
-const mapDispatchToProps = dispatch => {
-  return {
-    setExchangeFrom: code => dispatch(setExchangeFrom(code))
-  }
-}
+const mapDispatchToProps = () => ({
+  changeCurrency: code => changeCurrency(code)
+})
 
 const ExchangeFromContainer = connect(mapStateToProps, mapDispatchToProps)(ExchangeFrom)
 
