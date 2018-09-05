@@ -1,50 +1,47 @@
 import React from 'react'
 import { func, object } from 'prop-types'
-import {Layout, Row, Col} from 'antd'
+import {Layout, Row, Col, List} from 'antd'
 import ExchangeHeader from '../exchange-header/exchange-header-container'
 import ExchangeFrom from '../exchange-from/exchange-from-container'
 import ExchangeTo from '../exchange-to/exchange-to-container'
 import ExchangeRate from '../exchange-rate/exchange-rate-container'
 import SwitchCurrencies from '../switch-currencies/switch-currencies-container'
+import './app.css'
 
-const Header = Layout.Header
+const Footer = Layout.Footer
 const Content = Layout.Content
 
 class App extends React.Component {
   render () {
     return (
-      <div>
-        <Layout>
-          <Header>
-            <ExchangeHeader />
-          </Header>
-          <Content>
-            <Row>
-              <Col xs={2} sm={4} md={6} lg={8} xl={10}></Col>
-              <Col xs={20} sm={16} md={12} lg={8} xl={4}>
+      <Layout>
+        <Content style={{padding: '50px 0 0 0'}}>
+          <Col xs={0} sm={0} md={1} lg={2} xl={4}></Col>
+          <Col xs={24} sm={24} md={9} lg={7} xl={11}>
+            <List bordered={true} >
+              <List.Item>
                 <ExchangeFrom />
-              </Col>
-              <Col xs={2} sm={4} md={6} lg={8} xl={10}></Col>
-            </Row>
-            <Row>
-              <Col xs={2} sm={4} md={6} lg={8} xl={10}></Col>
-              <Col xs={20} sm={16} md={12} lg={8} xl={4}>
-
-              </Col>
-              <Col xs={2} sm={4} md={6} lg={8} xl={10}></Col>
-            </Row>
-            <Row>
-              <Col xs={2} sm={4} md={6} lg={8} xl={10}></Col>
-              <Col xs={20} sm={16} md={12} lg={8} xl={4}>
+              </List.Item>
+            </List>
+          </Col>
+          <Col xs={24} sm={24} md={4} lg={4} xl={4}>
+            <List bordered={true} >
+              <List.Item>
+                <SwitchCurrencies />
+                <ExchangeRate />
+              </List.Item>
+            </List>
+          </Col>
+          <Col xs={24} sm={24} md={9} lg={7} xl={11}>
+            <List bordered={true} >
+              <List.Item>
                 <ExchangeTo />
-              </Col>
-              <Col xs={2} sm={4} md={6} lg={8} xl={10}></Col>
-            </Row>
-            <SwitchCurrencies />
-            <ExchangeRate />
-          </Content>
-        </Layout>
-      </div>
+              </List.Item>
+            </List>
+          </Col>
+          <Col xs={0} sm={0} md={1} lg={2} xl={4}></Col>
+        </Content>
+      </Layout>
     )
   }
 }

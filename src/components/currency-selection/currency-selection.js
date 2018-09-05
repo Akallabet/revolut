@@ -1,6 +1,6 @@
 import React from 'react'
 import { array, string, func } from 'prop-types'
-import {Button, Modal, List} from 'antd'
+import {Button, Modal, List, Icon} from 'antd'
 import './currency-selection.css'
 
 class CurrencySelection extends React.Component {
@@ -23,9 +23,11 @@ class CurrencySelection extends React.Component {
     return (
       <div>
         <Button
+          size={'large'}
           onClick={this.openModal.bind(this)}
         >
           {this.props.currency}
+          <Icon type='caret-down' />
         </Button>
         <Modal
           title={null}

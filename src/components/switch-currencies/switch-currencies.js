@@ -4,7 +4,7 @@ import {Button} from 'antd'
 import './switch-currencies.css'
 
 const SwitchCurrencies = ({switchCurrencies}) => (
-  <Button onClick={switchCurrencies}>Switch Rates</Button>
+  <Button className='switch-currencies' onClick={switchCurrencies} icon='swap' shape='circle' />
 )
 
 SwitchCurrencies.propTypes = {

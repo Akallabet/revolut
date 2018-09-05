@@ -3,16 +3,14 @@ import { shape, number, string, func } from 'prop-types'
 import Exchange from '../exchange/exchange-container'
 
 const ExchangeFrom = ({exchangeFrom: {currency, amount}, changeCurrency, updateAndConvert}) => (
-  <div className='exchange-from'>
-    <Exchange
-      className='exchange-to'
-      currency={currency}
-      amount={amount}
-      sign='-'
-      onCurrencySelection={changeCurrency}
-      onAmountChange={updateAndConvert}
-    />
-  </div>
+  <Exchange
+    className='exchange-from'
+    currency={currency}
+    amount={amount}
+    sign='-'
+    onCurrencySelection={changeCurrency}
+    onAmountChange={updateAndConvert}
+  />
 )
 
 ExchangeFrom.propTypes = {

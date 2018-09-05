@@ -10,13 +10,14 @@ const Exchange = ({
   currency,
   amount,
   sign,
+  className = '',
   onCurrencySelection = () => {},
   onAmountChange = () => {}
 }) => {
   const balanceAmount = availableCurrencies.find(({code}) => code === currency).balance
   const balance = `${currencySymbols[currency]} ${balanceAmount}`
   return (
-    <div className='exchange'>
+    <div className={`${className} exchange`}>
       <div className='exchange-currency'>
         <div className='js-currency'>
           <CurrencySelection
@@ -34,6 +35,7 @@ const Exchange = ({
             value={amount}
             min={0}
             onChange={onAmountChange}
+            size={'large'}
             // formatter={value => value > 0 ? `${sign} ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : value}
             // parser={value => parseInt(value.replace(/\$\s?|(,*)/g, ''))}
           />
@@ -44,6 +46,7 @@ const Exchange = ({
 }
 
 Exchange.propTypes = {
+  className: string,
   availableCurrencies: array.isRequired,
   currencySymbols: object.isRequired,
   currency: string.isRequired,
