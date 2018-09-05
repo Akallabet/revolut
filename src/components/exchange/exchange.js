@@ -4,7 +4,15 @@ import { InputNumber } from 'antd'
 import CurrencySelection from '../currency-selection/currency-selection-container'
 import './exchange.css'
 
-const Exchange = ({availableCurrencies, currencySymbols, currency, amount, sign, onCurrencySelection = () => {}}) => {
+const Exchange = ({
+  availableCurrencies,
+  currencySymbols,
+  currency,
+  amount,
+  sign,
+  onCurrencySelection = () => {},
+  onAmountChange = () => {}
+}) => {
   const balanceAmount = availableCurrencies.find(({code}) => code === currency).balance
   const balance = `${currencySymbols[currency]} ${balanceAmount}`
   return (
@@ -23,8 +31,11 @@ const Exchange = ({availableCurrencies, currencySymbols, currency, amount, sign,
       <div className='exchange-amount'>
         <div className='js-amount'>
           <InputNumber
-            defaultValue={amount}
-            formatter={value => value > 0 ? `${sign} ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : value}
+            value={amount}
+            min={0}
+            onChange={onAmountChange}
+            // formatter={value => value > 0 ? `${sign} ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : value}
+            // parser={value => parseInt(value.replace(/\$\s?|(,*)/g, ''))}
           />
         </div>
       </div>
@@ -38,7 +49,8 @@ Exchange.propTypes = {
   currency: string.isRequired,
   amount: number.isRequired,
   sign: string,
-  onCurrencySelection: func
+  onCurrencySelection: func,
+  onAmountChange: func
 }
 
 export default Exchange

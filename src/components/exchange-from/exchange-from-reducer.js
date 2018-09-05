@@ -1,6 +1,7 @@
 import {CURRENCY_CODES} from '../../constants'
 import {
-  SET_EXCHANGE_FROM
+  SET_EXCHANGE_FROM,
+  UPDATE_AMOUNT_FROM
 } from './exchange-from-actions'
 
 const defState = {
@@ -14,6 +15,11 @@ const exchangeFromReducer = (state = defState, action) => {
       return {
         ...state,
         currency: action.currency
+      }
+    case UPDATE_AMOUNT_FROM:
+      return {
+        ...state,
+        amount: action.amount
       }
   }
   return state

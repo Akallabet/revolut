@@ -4,11 +4,13 @@ import {
 } from '../exchange-from/exchange-from-actions'
 
 import {
-  setExchangeTo
+  setExchangeTo,
+  convertAmountTo
 } from '../exchange-to/exchange-to-actions'
 
 export const switchCurrencies = () => {
   const {exchangeTo, exchangeFrom} = store.getState()
   setExchangeFrom(exchangeTo.currency)
   setExchangeTo(exchangeFrom.currency)
+  convertAmountTo(exchangeFrom.amount)
 }

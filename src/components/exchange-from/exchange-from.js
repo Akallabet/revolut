@@ -2,7 +2,7 @@ import React from 'react'
 import { shape, number, string, func } from 'prop-types'
 import Exchange from '../exchange/exchange-container'
 
-const ExchangeFrom = ({exchangeFrom: {currency, amount}, changeCurrency}) => (
+const ExchangeFrom = ({exchangeFrom: {currency, amount}, changeCurrency, updateAndConvert}) => (
   <div className='exchange-from'>
     <Exchange
       className='exchange-to'
@@ -10,6 +10,7 @@ const ExchangeFrom = ({exchangeFrom: {currency, amount}, changeCurrency}) => (
       amount={amount}
       sign='-'
       onCurrencySelection={changeCurrency}
+      onAmountChange={updateAndConvert}
     />
   </div>
 )
@@ -19,7 +20,8 @@ ExchangeFrom.propTypes = {
     currency: string.isRequired,
     amount: number.isRequired
   }),
-  changeCurrency: func.isRequired
+  changeCurrency: func.isRequired,
+  updateAndConvert: func.isRequired
 }
 
 export default ExchangeFrom

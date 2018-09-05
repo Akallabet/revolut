@@ -27,10 +27,10 @@ describe('Exchange From', () => {
       expect(wrapper.find('.js-balance')).toHaveLength(1)
     })
     it('I should see the amount I want to exchange', () => {
-      expect(wrapper.find(InputNumber).props().defaultValue).toEqual(props.amount)
+      expect(wrapper.find(InputNumber).props().value).toEqual(props.amount)
     })
     it('The amount should be defaulted as zero', () => {
-      expect(wrapper.find(InputNumber).props().defaultValue).toEqual(0)
+      expect(wrapper.find(InputNumber).props().value).toEqual(0)
     })
 
     describe('Currencies selection', () => {
@@ -46,7 +46,7 @@ describe('Exchange From', () => {
   describe('Exchange From Component', () => {
     let wrapper
     beforeAll(() => {
-      wrapper = shallow(<ExchangeFrom exchangeFrom={props}/>)
+      wrapper = shallow(<ExchangeFrom exchangeFrom={props} changeCurrency={() => {}} />)
     })
 
     it('I should see the amount witha negative sign', () => {

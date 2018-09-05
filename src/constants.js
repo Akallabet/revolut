@@ -37,7 +37,7 @@ export const AVAILABLE_CURRENCIES = [{
 }, {
   code: GBP,
   flag: GbpFlag,
-  balance: '1.00'
+  balance: '0.00'
 }]
 
 export const EXHCANGE_RATES = {
