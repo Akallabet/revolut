@@ -5,8 +5,8 @@ import {
 
 export const roundDecimals = number => Math.round(number * 10000) / 10000
 
-const EURRatesUrl = 'http://data.fixer.io/api/latest?access_key=28ae2da5e13bc77560fae58676bf6950&symbols=USD,GBP&format=1'
-const USDRatesUrl = 'http://apilayer.net/api/live?access_key=95f25cc37be73265fded00fba128afbc&base=GBP&currencies=GBP,EUR&format=1'
+const EURRatesUrl = 'http://data.fixer.io/api/latest?access_key=2c8a5f55ce59893e49e04d7703465b22&symbols=USD,GBP&format=1'
+const USDRatesUrl = 'http://apilayer.net/api/live?access_key=aeaa8a104093e098b1c4ae7296b8ce25&base=GBP&currencies=GBP,EUR&format=1'
 const GBPRatesUrl = 'https://free.currencyconverterapi.com/api/v6/convert?q=GBP_USD,GBP_EUR&compact=ultra'
 
 const fetchUSDRates = () => axios.get(USDRatesUrl)
