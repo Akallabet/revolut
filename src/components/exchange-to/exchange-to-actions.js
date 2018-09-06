@@ -1,5 +1,5 @@
 import store from '../../store'
-import {switchCurrencies} from '../switch-currencies/switch-currencies-actions'
+import {swapCurrencies} from '../swap-currencies/swap-currencies-actions'
 import {convertAmountFrom} from '../exchange-from/exchange-from-actions'
 
 export const SET_EXCHANGE_TO = 'SET_EXCHANGE_TO'
@@ -14,7 +14,7 @@ export const setExchangeTo = currency => {
 
 export const changeCurrency = currency => {
   const {exchangeFrom} = store.getState()
-  if (currency === exchangeFrom.currency) switchCurrencies()
+  if (currency === exchangeFrom.currency) swapCurrencies()
   else {
     setExchangeTo(currency)
     convertAmountTo(exchangeFrom.amount)

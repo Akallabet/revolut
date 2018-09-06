@@ -8,7 +8,7 @@ import {
   convertAmountTo
 } from '../exchange-to/exchange-to-actions'
 
-export const switchCurrencies = () => {
+export const swapCurrencies = () => {
   const {exchangeTo, exchangeFrom} = store.getState()
   setExchangeFrom(exchangeTo.currency)
   setExchangeTo(exchangeFrom.currency)

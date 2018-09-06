@@ -4,7 +4,7 @@ import App from '../src/components/app/app.js'
 import ExchangeFrom from '../src/components/exchange-from/exchange-from-container'
 import ExchangeTo from '../src/components/exchange-to/exchange-to-container'
 import ExchangeRate from '../src/components/exchange-rate/exchange-rate-container'
-import SwitchCurrencies from '../src/components/switch-currencies/switch-currencies-container'
+import SwapCurrencies from '../src/components/swap-currencies/swap-currencies-container'
 
 describe('Exchange Screen', () => {
   describe('Main component', () => {
@@ -22,7 +22,7 @@ describe('Exchange Screen', () => {
       expect(wrapper.find(ExchangeRate)).toHaveLength(1)
     })
     it('I should see the \'switch\' button', () => {
-      expect(wrapper.find(SwitchCurrencies)).toHaveLength(1)
+      expect(wrapper.find(SwapCurrencies)).toHaveLength(1)
     })
   })
 })

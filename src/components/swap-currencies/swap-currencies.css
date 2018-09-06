@@ -1,9 +1,9 @@
-.ant-btn.switch-currencies {
+.ant-btn.swap-currencies {
   background: #4CB2D4;
   transform: rotate(90deg);
   border: 1px solid #367ABD;
 }
 
-.ant-btn.switch-currencies:hover, .ant-btn.switch-currencies:focus {
+.ant-btn.swap-currencies:hover, .ant-btn.swap-currencies:focus {
   color: #367ABD;
 }

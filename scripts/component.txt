@@ -1,8 +1,0 @@
-import React from 'react'
-import './$FNAME.css'
-
-const $CNAME = () => (
-  <div>$CNAME component</div>
-)
-
-export default $CNAME

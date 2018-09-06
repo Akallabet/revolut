@@ -1,9 +1,0 @@
-import { connect } from 'react-redux'
-import $CNAME from './$FNAME'
-
-const mapStateToProps = null
-const mapDispatchToProps = null
-
-const $CNAMEContainer = connect(mapStateToProps, mapDispatchToProps)($CNAME)
-
-export default $CNAMEContainer

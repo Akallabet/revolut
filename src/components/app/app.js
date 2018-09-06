@@ -1,11 +1,10 @@
 import React from 'react'
 import { func, object } from 'prop-types'
 import {Layout, Col, List} from 'antd'
-// import ExchangeHeader from '../exchange-header/exchange-header-container'
 import ExchangeFrom from '../exchange-from/exchange-from-container'
 import ExchangeTo from '../exchange-to/exchange-to-container'
 import ExchangeRate from '../exchange-rate/exchange-rate-container'
-import SwitchCurrencies from '../switch-currencies/switch-currencies-container'
+import SwapCurrencies from '../swap-currencies/swap-currencies-container'
 import './app.css'
 
 const Content = Layout.Content
@@ -29,7 +28,7 @@ class App extends React.Component {
             <List.Item>
               <Col span={10}></Col>
               <Col span={4} style={{textAlign: 'center'}}>
-                <SwitchCurrencies />
+                <SwapCurrencies />
               </Col>
               <Col span={10} style={{textAlign: 'right'}}>
                 <ExchangeRate />
