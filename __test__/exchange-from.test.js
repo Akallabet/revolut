@@ -19,7 +19,7 @@ describe('Exchange From', () => {
     beforeAll(() => {
       wrapper = shallow(<Exchange {...props}/>)
     })
-  
+
     it('I should see the currency code I chose', () => {
       expect(wrapper.find('.js-currency')).toHaveLength(1)
     })
@@ -50,7 +50,6 @@ describe('Exchange From', () => {
       const compProps = wrapper.find(ExchangeContainer).props()
       expect(compProps.amount).toEqual(props.amount)
       expect(compProps.currency).toEqual(props.currency)
-      expect(compProps.sign).toEqual('-')
     })
   })
 })

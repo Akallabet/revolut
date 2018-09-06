@@ -2,12 +2,19 @@ import React from 'react'
 import { shape, number, string, func } from 'prop-types'
 import Exchange from '../exchange/exchange-container'
 
+/**
+ * Components that wraps more generic Exchange component making it specific
+ * ExchangeFrom component
+ * @param {object} exchangeFrom - containt currency and amount for the ExchangeFrom side of the conversion
+ * @param {function} changeCurrency - function that handles the currency change event
+ * @param {function} updateAndConvert - it handles the actual conversion functionality
+ */
+
 const ExchangeFrom = ({exchangeFrom: {currency, amount}, changeCurrency, updateAndConvert}) => (
   <Exchange
     className='exchange-from'
     currency={currency}
     amount={amount}
-    sign='-'
     onCurrencySelection={changeCurrency}
     onAmountChange={updateAndConvert}
   />

@@ -3,6 +3,12 @@ import {func} from 'prop-types'
 import {Button} from 'antd'
 import './swap-currencies.css'
 
+/**
+ * Button that swaps ExchangeFrom with ExchangeTo details (currency and amount)
+ * ExchangeFrom component
+ * @param {function} swapCurrencies - the actual swap functionality
+ */
+
 const SwapCurrencies = ({swapCurrencies}) => (
   <Button
     className='swap-currencies'

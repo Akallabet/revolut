@@ -1,11 +1,15 @@
 .currency-selection img {
-  width: 16px;
-  height: 16px;
+  width: 22px;
+  height: 22px;
+}
+
+.currency-option {
+  font-size: 1.2rem;
 }
 
 .currency-option img {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 
 .currency-selection .ant-btn {

@@ -1,64 +1,54 @@
 import React from 'react'
 import { array, string, func } from 'prop-types'
-import {Button, Modal, List, Icon} from 'antd'
+import {Button, Dropdown, Menu, Icon, Row, Col} from 'antd'
 import './currency-selection.css'
 
-class CurrencySelection extends React.Component {
-  constructor (props) {
-    super(props)
+/**
+ * It displays the current currency with flag and currency code
+ * On Click it opens a dropdown displaying all the available
+ * currencies with the possibility of selecting one
+ *
+ * @param {array} currencies - a list of all the available currencies
+ * @param {string} currency - the currency to be displayed
+ * @param {string} onCurrencySelection - callback for currency selection
+ */
 
-    this.state = {
-      open: false
-    }
-  }
+const CurrencySelection = ({currencies, currency, onCurrencySelection}) => {
+  const {flag} = currencies.find(({code}) => code === currency)
 
-  openModal () { this.setState({open: true}) }
-  closeModal () { this.setState({open: false}) }
-  onSelection (code) {
-    this.props.onCurrencySelection(code)
-    this.closeModal()
-  }
+  const menu = (
+    <Menu
+      size='large'
+    >
+      {
+        currencies.map(({flag, code}, i) => (
+          <Menu.Item
+            className='currency-option'
+            key={i}
+            onClick={() => onCurrencySelection(code)}
+          >
+            <Row>
+              <Col span={2} />
+              <Col span={10}>
+                <img src={flag}/>
+              </Col>
+              <Col span={10}>
+                {code}
+              </Col>
+            </Row>
+          </Menu.Item>
+        ))
+      }
+    </Menu>
+  )
 
-  render () {
-    return (
-      <div>
-        <Button
-          size={'large'}
-          onClick={this.openModal.bind(this)}
-        >
-          {this.props.currency}
-          <Icon type='caret-down' />
-        </Button>
-        <Modal
-          title={null}
-          closable={false}
-          visible={this.state.open}
-          onOk={this.closeModal.bind(this)}
-          onCancel={this.closeModal.bind(this)}
-          footer={null}
-          centered
-          bodyStyle={{
-            padding: 0,
-            width: '142px'
-          }}
-        >
-          <List
-            bordered
-            className='currency-selection'
-            dataSource={this.props.currencies}
-            size='small'
-            renderItem={({flag, code}) => (
-              <List.Item>
-                <Button onClick={() => this.onSelection(code)}>
-                  <img src={flag}/> {code}
-                </Button>
-              </List.Item>
-            )}
-          />
-        </Modal>
-      </div>
-    )
-  }
+  return (
+    <Dropdown overlay={menu} trigger={['click']}>
+      <Button className='currency-selection'>
+        <img src={flag}/> {currency} <Icon type='caret-down' />
+      </Button>
+    </Dropdown>
+  )
 }
 
 CurrencySelection.propTypes = {

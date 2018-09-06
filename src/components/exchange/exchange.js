@@ -4,12 +4,24 @@ import { InputNumber } from 'antd'
 import CurrencySelection from '../currency-selection/currency-selection-container'
 import './exchange.css'
 
+/**
+ * Component that shows a currency and the correspondent amount
+ * CurrencySelection component allows you to change the currency
+ * The Input allows to type the amount to be/being converted
+ *
+ * @param {string} className - add a custom class
+ * @param {array} availableCurrencies - a list of all the available currencies
+ * @param {object} currencySymbols - list of currency symbols in Unicode
+ * @param {string} currency - the current currency code
+ * @param {number} amount - the current amount
+ * @param {function} onCurrencySelection - callback for currency selection
+ */
+
 const Exchange = ({
   availableCurrencies,
   currencySymbols,
   currency,
   amount,
-  sign,
   className = '',
   onCurrencySelection = () => {},
   onAmountChange = () => {}
@@ -30,8 +42,6 @@ const Exchange = ({
           min={0}
           onChange={onAmountChange}
           size={'large'}
-          formatter={value => value > 0 ? `${sign} ${value}` : value}
-          parser={value => value.replace(sign, '')}
         />
       </div>
     </div>
@@ -44,7 +54,6 @@ Exchange.propTypes = {
   currencySymbols: object.isRequired,
   currency: string.isRequired,
   amount: number.isRequired,
-  sign: string,
   onCurrencySelection: func,
   onAmountChange: func
 }

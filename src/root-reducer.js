@@ -4,6 +4,10 @@ import exchangeRates from './components/exchange-rate/exchange-rate-reducer'
 import exchangeFrom from './components/exchange-from/exchange-from-reducer'
 import exchangeTo from './components/exchange-to/exchange-to-reducer'
 
+/**
+ * Default store constants
+ */
+
 import {
   POLLING,
   CURRENCY_CODES,
@@ -11,6 +15,10 @@ import {
   CURRENCY_FLAGS,
   AVAILABLE_CURRENCIES
 } from './constants'
+
+/**
+ * Main store
+ */
 
 export default combineReducers({
   polling: () => POLLING,

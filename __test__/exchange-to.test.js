@@ -18,7 +18,6 @@ describe('Exchange To', () => {
       const compProps = wrapper.find(Exchange).props()
       expect(compProps.amount).toEqual(props.amount)
       expect(compProps.currency).toEqual(props.currency)
-      expect(wrapper.find(Exchange).props().sign).toEqual('+')
     })
   })
 })

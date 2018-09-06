@@ -77,6 +77,7 @@
     "postcss-loader": "^2.1.5",
     "prettier": "^1.13.4",
     "prettylint": "^1.0.0",
+    "react-styleguidist": "^7.3.5",
     "standard": "^10.0.3",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
@@ -97,7 +98,7 @@
       "<rootDir>/src"
     ],
     "transformIgnorePatterns": [
-      "/node_modules/(?!antd|css-animation|rc-pagination|rc-calendar|rc-util)"
+      "/node_modules/(?!antd|css-animation|rc-pagination|rc-calendar|rc-util|rc-tooltip)"
     ],
     "setupFiles": [
       "<rootDir>/jest-configs/setup-tests.js"
