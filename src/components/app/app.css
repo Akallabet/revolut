@@ -1,6 +1,31 @@
 .ant-list {
   background: #367ABD;
   color: #ffffff;
+  margin: auto;
+}
+
+.ant-list.rate {
+  background: #ffffff;
+  color: #367ABD;
+  margin: auto;
+}
+
+@media (max-width: 600px) {
+  .ant-list.exchange-list {
+    width: 400px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  .ant-list.exchange-list {
+    width: 550px;
+  }
+}
+
+@media (min-width: 801px) {
+  .ant-list.exchange-list {
+    width: 700px;
+  }
 }
 
 .ant-list-bordered {
@@ -17,45 +42,19 @@
   flex-direction: row;
 }
 
-.exchange .exchange-currency {
-  float: left;
-}
-
-.exchange .exchange-amount {
-  float: right;
-}
-
-.ant-input-number {
-  background: #367ABD;
-  color: #ffffff;
-  border: 1px solid #367ABD;
-  /* width: 150px; */
-  font-size: 1.5rem;
-}
-
-.ant-input-number-handler-wrap {
-  display: none;
-}
-
-.ant-input-number-input {
-  text-align: right;
-}
-
 .ant-btn {
   color: #ffffff;
   border: 1px solid #367ABD;
 }
 
-.exchange .ant-btn {
-  background: #367ABD;
-  font-size: 1.3rem;
-  padding: 0;
+.ant-btn.exchange-rate {
+  color: #4CB2D4;
 }
 
 .js-balance {
   font-size: 0.6rem;
 }
 
-.ant-btn.switch-currencies {
-  background: #56B949;
+.ant-modal {
+  width: 142px!important;
 }

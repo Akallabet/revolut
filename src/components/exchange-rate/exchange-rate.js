@@ -1,6 +1,6 @@
 import React from 'react'
 import { shape, string, number, object, array, func } from 'prop-types'
-import './exchange-rate.css'
+import {Tag} from 'antd'
 
 class ExchangeRate extends React.Component {
   componentDidMount () {
@@ -12,9 +12,12 @@ class ExchangeRate extends React.Component {
     const currencyFrom = availableCurrencies.find(({code}) => code === exchangeFrom.currency)
     const currencyTo = availableCurrencies.find(({code}) => code === exchangeTo.currency)
     return (
-      <div>
-        <span>1 {currencySymbols[currencyFrom.code]} = {exchangeRates[currencyFrom.code][currencyTo.code]} {currencySymbols[currencyTo.code]}</span>
-      </div>
+      <Tag
+        className='exchange-rate'
+        color='#4CB2D4'
+      >
+        1 {currencySymbols[currencyFrom.code]} = {exchangeRates[currencyFrom.code][currencyTo.code]} {currencySymbols[currencyTo.code]}
+      </Tag>
     )
   }
 }

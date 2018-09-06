@@ -1,14 +1,13 @@
 import React from 'react'
 import { func, object } from 'prop-types'
-import {Layout, Row, Col, List} from 'antd'
-import ExchangeHeader from '../exchange-header/exchange-header-container'
+import {Layout, Col, List} from 'antd'
+// import ExchangeHeader from '../exchange-header/exchange-header-container'
 import ExchangeFrom from '../exchange-from/exchange-from-container'
 import ExchangeTo from '../exchange-to/exchange-to-container'
 import ExchangeRate from '../exchange-rate/exchange-rate-container'
 import SwitchCurrencies from '../switch-currencies/switch-currencies-container'
 import './app.css'
 
-const Footer = Layout.Footer
 const Content = Layout.Content
 
 class App extends React.Component {
@@ -16,30 +15,35 @@ class App extends React.Component {
     return (
       <Layout>
         <Content style={{padding: '50px 0 0 0'}}>
-          <Col xs={0} sm={0} md={1} lg={2} xl={4}></Col>
-          <Col xs={24} sm={24} md={9} lg={7} xl={11}>
-            <List bordered={true} >
-              <List.Item>
-                <ExchangeFrom />
-              </List.Item>
-            </List>
-          </Col>
-          <Col xs={24} sm={24} md={4} lg={4} xl={4}>
-            <List bordered={true} >
-              <List.Item>
+          <List
+            bordered={true}
+            className='exchange-list'
+          >
+            <List.Item>
+              <ExchangeFrom />
+            </List.Item>
+          </List>
+          <List
+            className='rate exchange-list'
+          >
+            <List.Item>
+              <Col span={10}></Col>
+              <Col span={4} style={{textAlign: 'center'}}>
                 <SwitchCurrencies />
+              </Col>
+              <Col span={10} style={{textAlign: 'right'}}>
                 <ExchangeRate />
-              </List.Item>
-            </List>
-          </Col>
-          <Col xs={24} sm={24} md={9} lg={7} xl={11}>
-            <List bordered={true} >
-              <List.Item>
-                <ExchangeTo />
-              </List.Item>
-            </List>
-          </Col>
-          <Col xs={0} sm={0} md={1} lg={2} xl={4}></Col>
+              </Col>
+            </List.Item>
+          </List>
+          <List
+            bordered={true}
+            className='exchange-list'
+          >
+            <List.Item>
+              <ExchangeTo />
+            </List.Item>
+          </List>
         </Content>
       </Layout>
     )

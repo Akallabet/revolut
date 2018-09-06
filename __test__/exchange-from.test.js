@@ -23,9 +23,6 @@ describe('Exchange From', () => {
     it('I should see the currency code I chose', () => {
       expect(wrapper.find('.js-currency')).toHaveLength(1)
     })
-    it('I should see the balance with the same currency', () => {
-      expect(wrapper.find('.js-balance')).toHaveLength(1)
-    })
     it('I should see the amount I want to exchange', () => {
       expect(wrapper.find(InputNumber).props().value).toEqual(props.amount)
     })

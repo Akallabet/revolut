@@ -47,10 +47,10 @@ class CurrencySelection extends React.Component {
             className='currency-selection'
             dataSource={this.props.currencies}
             size='small'
-            renderItem={({flag, code, balance}) => (
+            renderItem={({flag, code}) => (
               <List.Item>
                 <Button onClick={() => this.onSelection(code)}>
-                  <img src={flag}/> {code} {balance}
+                  <img src={flag}/> {code}
                 </Button>
               </List.Item>
             )}

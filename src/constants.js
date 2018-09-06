@@ -28,16 +28,13 @@ export const CURRENCY_FLAGS = {
 
 export const AVAILABLE_CURRENCIES = [{
   code: EUR,
-  flag: EurFlag,
-  balance: '0.00'
+  flag: EurFlag
 }, {
   code: USD,
-  flag: UsdFlag,
-  balance: '0.00'
+  flag: UsdFlag
 }, {
   code: GBP,
-  flag: GbpFlag,
-  balance: '0.00'
+  flag: GbpFlag
 }]
 
 export const EXHCANGE_RATES = {

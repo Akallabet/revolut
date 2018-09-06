@@ -27,6 +27,7 @@ export const updateAndConvert = amount => {
 }
 
 export const updateAmountFrom = amount => {
+  amount = parseFloat(amount)
   if (!amount || isNaN(amount)) amount = 0
   store.dispatch({
     type: UPDATE_AMOUNT_FROM,
@@ -35,6 +36,7 @@ export const updateAmountFrom = amount => {
 }
 
 export const convertAmountFrom = amount => {
+  amount = parseFloat(amount)
   if (!amount || isNaN(amount)) amount = 0
   const {exchangeFrom, exchangeTo, exchangeRates} = store.getState()
   const conversionRate = exchangeRates[exchangeTo.currency][exchangeFrom.currency]
