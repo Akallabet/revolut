@@ -1,7 +1,7 @@
 {
   "name": "revolut",
   "version": "1.0.0",
-  "description": "revolute test",
+  "description": "revolut test",
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint src --ext .js -c .eslintrc",

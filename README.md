@@ -1,5 +1,6 @@
 # Revolut Exchange Screen
 
+![Alt text](assets/screenshots/revolut-exchange-screen.png?raw=true "Exchange Screen")
 
 ## Usage
 

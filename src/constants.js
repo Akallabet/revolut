@@ -2,7 +2,7 @@ import EurFlag from '../assets/images/EUR.svg'
 import UsdFlag from '../assets/images/USD.svg'
 import GbpFlag from '../assets/images/GBP.svg'
 
-export const POLLING = 600000
+export const POLLING = 10000
 
 const EUR = 'EUR'
 const USD = 'USD'
