@@ -18,7 +18,7 @@ npm run start:local
 npm start
 ```
 
-For both dev and local environments you can see the resulting app at [http://localhost:9000]
+For both dev and local environments you can see the resulting app at [http://localhost:9000](http://localhost:9000)
 
 ## Implemented features
 
