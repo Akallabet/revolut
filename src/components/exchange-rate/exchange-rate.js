@@ -1,5 +1,5 @@
 import React from 'react'
-import { shape, string, number, object, array, func } from 'prop-types'
+import { oneOfType, shape, string, number, object, array, func } from 'prop-types'
 import {Tag} from 'antd'
 
 /**
@@ -37,11 +37,11 @@ ExchangeRate.propTypes = {
   exchangeRates: object,
   exchangeFrom: shape({
     currency: string.isRequired,
-    amount: number.isRequired
+    amount: oneOfType([number, string])
   }),
   exchangeTo: shape({
     currency: string.isRequired,
-    amount: number.isRequired
+    amount: oneOfType([number, string])
   }),
   availableCurrencies: array.isRequired,
   currencySymbols: object.isRequired,

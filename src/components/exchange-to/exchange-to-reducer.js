@@ -6,7 +6,7 @@ import {
 
 const defState = {
   currency: CURRENCY_CODES.USD,
-  amount: 0.00
+  amount: ''
 }
 
 const exchangeToReducer = (state = defState, action) => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { array, object, number, string, func } from 'prop-types'
+import { oneOfType, array, object, number, string, func } from 'prop-types'
 import { InputNumber } from 'antd'
 import CurrencySelection from '../currency-selection/currency-selection-container'
 import './exchange.css'
@@ -38,6 +38,7 @@ const Exchange = ({
     <div className='exchange-amount'>
       <div className='js-amount'>
         <InputNumber
+          placeholder={0}
           value={amount}
           min={0}
           onChange={onAmountChange}
@@ -53,7 +54,7 @@ Exchange.propTypes = {
   availableCurrencies: array.isRequired,
   currencySymbols: object.isRequired,
   currency: string.isRequired,
-  amount: number.isRequired,
+  amount: oneOfType([number, string]),
   onCurrencySelection: func,
   onAmountChange: func
 }

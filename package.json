@@ -10,8 +10,8 @@
     "build": "webpack -p --config webpack.config.js",
     "server": "node ./server.js",
     "start:local": "npm run build && npm run server",
-    "test": "jest --coverage",
-    "test:watch": "jest --coverage --watchAll",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
     "precommit": "npm run test && npm run lint"
   },
   "repository": {

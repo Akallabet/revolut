@@ -29,3 +29,11 @@ For both dev and local environments, open [http://localhost:9000](http://localho
 * Switch currencies
 
 * Current rates polling
+
+## Tecnology used
+
+* React: DOM manipulation
+* Redux: State managing
+* AntDesign: UI library
+* Webpack: code bundling
+* Jest: test

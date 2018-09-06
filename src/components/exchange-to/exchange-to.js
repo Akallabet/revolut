@@ -1,5 +1,5 @@
 import React from 'react'
-import { shape, number, string, func } from 'prop-types'
+import { oneOfType, shape, number, string, func } from 'prop-types'
 import Exchange from '../exchange/exchange-container'
 
 /**
@@ -23,7 +23,7 @@ const ExchangeTo = ({exchangeTo: {currency, amount}, changeCurrency, updateAndCo
 ExchangeTo.propTypes = {
   exchangeTo: shape({
     currency: string.isRequired,
-    amount: number.isRequired
+    amount: oneOfType([number, string])
   }),
   changeCurrency: func,
   updateAndConvert: func

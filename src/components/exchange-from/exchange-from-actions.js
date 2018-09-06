@@ -1,4 +1,5 @@
 import store from '../../store'
+import {roundToTwoDecimals} from '../../utils'
 import {swapCurrencies} from '../swap-currencies/swap-currencies-actions'
 import {convertAmountTo} from '../exchange-to/exchange-to-actions'
 
@@ -22,26 +23,23 @@ export const changeCurrency = currency => {
 }
 
 export const updateAndConvert = amount => {
+  if (!amount || amount == null || isNaN(amount)) amount = 0
   updateAmountFrom(amount)
   convertAmountTo(amount)
 }
 
 export const updateAmountFrom = amount => {
-  amount = parseFloat(amount)
-  if (!amount || isNaN(amount)) amount = 0
   store.dispatch({
     type: UPDATE_AMOUNT_FROM,
-    amount
+    amount: amount || ''
   })
 }
 
 export const convertAmountFrom = amount => {
-  amount = parseFloat(amount)
-  if (!amount || isNaN(amount)) amount = 0
   const {exchangeFrom, exchangeTo, exchangeRates} = store.getState()
   const conversionRate = exchangeRates[exchangeTo.currency][exchangeFrom.currency]
   store.dispatch({
     type: UPDATE_AMOUNT_FROM,
-    amount: amount * conversionRate
+    amount: amount ? roundToTwoDecimals(amount * conversionRate) : ''
   })
 }
