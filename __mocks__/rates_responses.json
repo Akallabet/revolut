@@ -1,0 +1,5 @@
+{
+  "USD": {"terms":"http://www.xe.com/legal/dfs.php","privacy":"http://www.xe.com/privacy.php","from":"USD","amount":1.0,"timestamp":"2018-09-09T00:00:00Z","to":[{"quotecurrency":"EUR","mid":0.8650990011},{"quotecurrency":"GBP","mid":0.7738360904}]},
+  "EUR": {"terms":"http://www.xe.com/legal/dfs.php","privacy":"http://www.xe.com/privacy.php","from":"EUR","amount":1.0,"timestamp":"2018-09-09T00:00:00Z","to":[{"quotecurrency":"GBP","mid":0.8945058189},{"quotecurrency":"USD","mid":1.1559370647}]},
+  "GBP": {"terms":"http://www.xe.com/legal/dfs.php","privacy":"http://www.xe.com/privacy.php","from":"GBP","amount":1.0,"timestamp":"2018-09-09T00:00:00Z","to":[{"quotecurrency":"EUR","mid":1.1179357125},{"quotecurrency":"USD","mid":1.2922633261}]}
+}
