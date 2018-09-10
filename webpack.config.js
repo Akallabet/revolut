@@ -103,6 +103,12 @@ module.exports = {
     compress: false,
     historyApiFallback: {
       rewrites: [{ from: /^\/$/, to: BUILD_DIR }]
+    },
+    before: app => {
+      app.get('/api/rates/*', (req, res) => {
+        const rates = require('./__mocks__/rates_responses.json')
+        res.json(rates[req.query.from])
+      })
     }
   }
 }
