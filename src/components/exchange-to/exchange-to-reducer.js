@@ -1,4 +1,4 @@
-import {CURRENCY_CODES} from '../../constants'
+import {CURRENCY_CODES} from '../../utils/constants'
 import {
   SET_EXCHANGE_TO,
   UPDATE_AMOUNT_TO

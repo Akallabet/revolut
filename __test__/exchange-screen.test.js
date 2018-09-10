@@ -1,6 +1,6 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import App from '../src/components/app/app.js'
+import CurrencyExchange from '../src/pages/currency-exchange/currency-exchange'
 import ExchangeFrom from '../src/components/exchange-from/exchange-from-container'
 import ExchangeTo from '../src/components/exchange-to/exchange-to-container'
 import ExchangeRate from '../src/components/exchange-rate/exchange-rate-container'
@@ -10,7 +10,7 @@ describe('Exchange Screen', () => {
   describe('Main component', () => {
     let wrapper
     beforeAll(() => {
-      wrapper = shallow(<App/>)
+      wrapper = shallow(<CurrencyExchange/>)
     })
     it('I should see the \'Exchange from\' component', () => {
       expect(wrapper.find(ExchangeFrom)).toHaveLength(1)

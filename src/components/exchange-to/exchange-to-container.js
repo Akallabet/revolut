@@ -1,16 +1,23 @@
 import { connect } from 'react-redux'
-import ExchangeTo from './exchange-to'
+import Exchange from '../exchange/exchange'
 import {
   updateAndConvert,
   changeCurrency
 } from './exchange-to-actions'
 
-const mapStateToProps = ({exchangeTo}) => ({exchangeTo})
+const mapStateToProps = ({exchangeTo: {currency, amount}, availableCurrencies, currencySymbols}) =>
+  ({
+    className: 'exchange-to',
+    currency,
+    amount,
+    availableCurrencies,
+    currencySymbols
+  })
 const mapDispatchToProps = () => ({
-  changeCurrency: code => changeCurrency(code),
-  updateAndConvert: amount => updateAndConvert(amount)
+  onCurrencySelection: code => changeCurrency(code),
+  onAmountChange: amount => updateAndConvert(amount)
 })
 
-const ExchangeToContainer = connect(mapStateToProps, mapDispatchToProps)(ExchangeTo)
+const ExchangeFromContainer = connect(mapStateToProps, mapDispatchToProps)(Exchange)
 
-export default ExchangeToContainer
+export default ExchangeFromContainer

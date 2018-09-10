@@ -1,4 +1,4 @@
-import { EXHCANGE_RATES } from '../../constants'
+import { EXHCANGE_RATES } from '../../utils/constants'
 import {
   UPDATE_RATES
 } from './exchange-rate-actions'

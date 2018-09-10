@@ -2,7 +2,7 @@ import ratesResponses from '../__mocks__/rates_responses.json'
 import {
   roundToFourDecimals,
   fetchRates
-} from '../src/utils'
+} from '../src/utils/rates'
 
 const expectedRates = {
   USD: {

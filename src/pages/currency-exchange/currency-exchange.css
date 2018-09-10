@@ -1,0 +1,25 @@
+.ant-list {
+  background: #367ABD;
+  color: #ffffff;
+  margin: auto;
+}
+
+.ant-list.rate {
+  background: #ffffff;
+  color: #367ABD;
+  margin: auto;
+}
+
+.ant-list-bordered {
+  border: 1px solid #4CB2D4;
+}
+
+.ant-list-bordered .ant-list-item {
+  border-bottom: 1px solid #4CB2D4;
+}
+
+.ant-list-item .exchange {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}

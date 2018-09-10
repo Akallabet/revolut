@@ -38,6 +38,9 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.6",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.8",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.3.0"
@@ -78,6 +81,7 @@
     "prettier": "^1.13.4",
     "prettylint": "^1.0.0",
     "react-styleguidist": "^7.3.5",
+    "redux-mock-store": "^1.5.3",
     "standard": "^10.0.3",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
@@ -98,7 +102,7 @@
       "<rootDir>/src"
     ],
     "transformIgnorePatterns": [
-      "/node_modules/(?!antd|css-animation|rc-pagination|rc-calendar|rc-util|rc-tooltip)"
+      "/node_modules/(?!antd|css-animation|rc-pagination|rc-calendar|rc-util|rc-tooltip|rc-tabs)"
     ],
     "setupFiles": [
       "<rootDir>/jest-configs/setup-tests.js"

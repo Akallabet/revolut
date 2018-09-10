@@ -21,7 +21,7 @@ const CurrencySelection = ({currencies, currency, onCurrencySelection}) => {
       size='large'
     >
       {
-        currencies.map(({flag, code}, i) => (
+        currencies.map(({flag, code, balance}, i) => (
           <Menu.Item
             className='currency-option'
             key={i}
@@ -33,7 +33,7 @@ const CurrencySelection = ({currencies, currency, onCurrencySelection}) => {
                 <img src={flag}/>
               </Col>
               <Col span={10}>
-                {code}
+                {code} {balance}
               </Col>
             </Row>
           </Menu.Item>

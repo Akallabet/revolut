@@ -1,4 +1,4 @@
-import store from '../../store'
+import store from '../../utils/store'
 import {
   setExchangeFrom
 } from '../exchange-from/exchange-from-actions'

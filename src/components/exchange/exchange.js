@@ -25,29 +25,37 @@ const Exchange = ({
   className = '',
   onCurrencySelection = () => {},
   onAmountChange = () => {}
-}) => (
-  <div className={`${className} exchange`}>
-    <div className='exchange-currency'>
-      <div className='js-currency'>
-        <CurrencySelection
-          currency={currency}
-          onCurrencySelection={onCurrencySelection}
-        />
+}) => {
+  const currentCurrency = availableCurrencies.find(({code}) => code === currency)
+  const {balance} = currentCurrency
+  const symbol = currencySymbols[currency]
+  return (
+    <div className={`${className} exchange`}>
+      <div className='exchange-currency'>
+        <div className='js-currency'>
+          <CurrencySelection
+            currency={currency}
+            onCurrencySelection={onCurrencySelection}
+          />
+        </div>
+        <div className='js-balance'>
+          {symbol} {balance}
+        </div>
+      </div>
+      <div className='exchange-amount'>
+        <div className='js-amount'>
+          <InputNumber
+            placeholder={0}
+            value={amount}
+            min={0}
+            onChange={onAmountChange}
+            size={'large'}
+          />
+        </div>
       </div>
     </div>
-    <div className='exchange-amount'>
-      <div className='js-amount'>
-        <InputNumber
-          placeholder={0}
-          value={amount}
-          min={0}
-          onChange={onAmountChange}
-          size={'large'}
-        />
-      </div>
-    </div>
-  </div>
-)
+  )
+}
 
 Exchange.propTypes = {
   className: string,
@@ -55,6 +63,7 @@ Exchange.propTypes = {
   currencySymbols: object.isRequired,
   currency: string.isRequired,
   amount: oneOfType([number, string]),
+  balance: number,
   onCurrencySelection: func,
   onAmountChange: func
 }

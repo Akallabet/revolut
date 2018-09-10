@@ -1,23 +1,28 @@
 import React from 'react'
 import {shallow} from 'enzyme'
+import configureStore from 'redux-mock-store'
 import {InputNumber} from 'antd'
+import {initialStore} from '../__mocks__/store'
 import availableCurrencies from '../__mocks__/available-currencies'
 import CurrencySelection from '../src/components/currency-selection/currency-selection-container'
-import ExchangeContainer from '../src/components/exchange/exchange-container'
 import Exchange from '../src/components/exchange/exchange'
-import ExchangeFrom from '../src/components/exchange-from/exchange-from'
+import ExchangeFrom from '../src/components/exchange-from/exchange-from-container'
 
 describe('Exchange From', () => {
   const props = {
     currency: 'EUR',
-    amount: 0.00,
+    amount: '',
     availableCurrencies,
     currencySymbols: {}
   }
+  const mockStore = configureStore()
+  let store, container
+
   describe('Exchange Component', () => {
     let wrapper
     beforeAll(() => {
-      wrapper = shallow(<Exchange {...props}/>)
+      store = mockStore(initialStore)
+      wrapper = shallow(<Exchange {...props} store={store}/>)
     })
 
     it('I should see the currency code I chose', () => {
@@ -27,7 +32,7 @@ describe('Exchange From', () => {
       expect(wrapper.find(InputNumber).props().value).toEqual(props.amount)
     })
     it('The amount should be defaulted as zero', () => {
-      expect(wrapper.find(InputNumber).props().value).toEqual(0)
+      expect(wrapper.find(InputNumber).props().value).toEqual('')
     })
 
     describe('Currencies selection', () => {
@@ -43,13 +48,14 @@ describe('Exchange From', () => {
   describe('Exchange From Component', () => {
     let wrapper
     beforeAll(() => {
-      wrapper = shallow(<ExchangeFrom exchangeFrom={props} changeCurrency={() => {}} />)
+      store = mockStore(initialStore)
+      wrapper = shallow(<ExchangeFrom changeCurrency={() => {}} store={store}/>)
     })
 
-    it('I should see the amount witha negative sign', () => {
-      const compProps = wrapper.find(ExchangeContainer).props()
-      expect(compProps.amount).toEqual(props.amount)
-      expect(compProps.currency).toEqual(props.currency)
+    it('I should see the amount with a negative sign', () => {
+      const compProps = wrapper.find(Exchange).props()
+      expect(compProps.amount).toEqual(initialStore.exchangeFrom.amount)
+      expect(compProps.currency).toEqual(initialStore.exchangeFrom.currency)
     })
   })
 })

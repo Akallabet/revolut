@@ -1,7 +1,7 @@
-import store from '../../store'
+import store from '../../utils/store'
 import {
   fetchRates
-} from '../../utils'
+} from '../../utils/rates'
 
 export const UPDATE_RATES = 'UPDATE_RATES'
 

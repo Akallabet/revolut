@@ -1,5 +1,5 @@
-import store from '../../store'
-import {roundToTwoDecimals} from '../../utils'
+import store from '../../utils/store'
+import {roundToTwoDecimals} from '../../utils/rates'
 import {swapCurrencies} from '../swap-currencies/swap-currencies-actions'
 import {convertAmountTo} from '../exchange-to/exchange-to-actions'
 

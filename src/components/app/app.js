@@ -1,64 +1,30 @@
 import React from 'react'
-import { object } from 'prop-types'
-import {Layout, Col, List} from 'antd'
-import ExchangeFrom from '../exchange-from/exchange-from-container'
-import ExchangeTo from '../exchange-to/exchange-to-container'
-import ExchangeRate from '../exchange-rate/exchange-rate-container'
-import SwapCurrencies from '../swap-currencies/swap-currencies-container'
-import './app.css'
-
-const Content = Layout.Content
+import { Route } from 'react-router-dom'
+import routes, {routeKeys} from '../../utils/routes'
+import CurrencyExchange from '../../pages/currency-exchange/currency-exchange-container'
+import Wallet from '../../pages/wallet/wallet'
 
 /**
- * This is the main component that contains:
- * the ExchangeFrom section
- * the Swap button
- * the current Eaxchange Rate
- * the ExchangeTo section
- * @param {object} currencyCodes - A list of currency codes ('EUR', 'GBP', 'USD')
+ * This is the main component
  */
-class App extends React.Component {
-  render () {
-    return (
-      <Layout>
-        <Content style={{padding: '50px 0 0 0'}}>
-          <List
-            bordered={true}
-            className='exchange-list'
-          >
-            <List.Item>
-              <ExchangeFrom />
-            </List.Item>
-          </List>
-          <List
-            className='rate exchange-list'
-          >
-            <List.Item>
-              <Col span={10}></Col>
-              <Col span={4} style={{textAlign: 'center'}}>
-                <SwapCurrencies />
-              </Col>
-              <Col span={10} style={{textAlign: 'right'}}>
-                <ExchangeRate />
-              </Col>
-            </List.Item>
-          </List>
-          <List
-            bordered={true}
-            className='exchange-list'
-          >
-            <List.Item>
-              <ExchangeTo />
-            </List.Item>
-          </List>
-        </Content>
-      </Layout>
-    )
-  }
+
+const routeComponents = {
+  [routeKeys.wallet]: routes.find(({key}) => key === routeKeys.wallet),
+  [routeKeys.currencyExchange]: routes.find(({key}) => key === routeKeys.currencyExchange)
 }
 
-App.propTypes = {
-  currencyCodes: object
-}
+const App = () => [
+  <Route key='default' exact path='/' component={Wallet}/>,
+  <Route
+    key={routeComponents[routeKeys.wallet].key}
+    path={routeComponents[routeKeys.wallet].path}
+    component={Wallet}
+  />,
+  <Route
+    key={routeComponents[routeKeys.currencyExchange].key}
+    path={routeComponents[routeKeys.currencyExchange].path}
+    component={CurrencyExchange}
+  />
+]
 
 export default App
