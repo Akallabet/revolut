@@ -1,13 +1,13 @@
 
 export const routeKeys = {
-  wallet: 'wallet',
+  pockets: 'pockets',
   currencyExchange: 'exchange'
 }
 
 const routes = [{
-  key: routeKeys.wallet,
-  path: '/wallet',
-  label: 'Wallet',
+  key: routeKeys.pockets,
+  path: '/pockets',
+  label: 'Pockets',
   default: true
 },
 {

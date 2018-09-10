@@ -3,6 +3,7 @@ import { combineReducers } from 'redux'
 import exchangeRates from '../components/exchange-rate/exchange-rate-reducer'
 import exchangeFrom from '../components/exchange-from/exchange-from-reducer'
 import exchangeTo from '../components/exchange-to/exchange-to-reducer'
+import pocketCurrency from '../components/pocket/pocket-reducer'
 
 /**
  * Default store constants
@@ -28,5 +29,6 @@ export default combineReducers({
   availableCurrencies: () => AVAILABLE_CURRENCIES,
   exchangeRates,
   exchangeFrom,
-  exchangeTo
+  exchangeTo,
+  pocketCurrency
 })
