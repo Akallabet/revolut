@@ -13,24 +13,22 @@ import {
 const currencySelectionReducer = (state = AVAILABLE_CURRENCIES, action) => {
   switch (action.type) {
     case INCREASE_CURRENCY_AMOUNT:
-      return state.map(({code, flag, balance}) => {
-        if (code === action.currency) {
+      return state.map(currency => {
+        if (currency.code === action.currency) {
           return {
-            code,
-            flag,
-            balance: roundToTwoDecimals(action.amount + balance)
+            ...currency,
+            balance: roundToTwoDecimals(action.amount + currency.balance)
           }
-        } else return {flag, code, balance}
+        } else return currency
       })
     case DECREASE_CURRENCY_AMOUNT:
-      return state.map(({code, flag, balance}) => {
-        if (code === action.currency) {
+      return state.map(currency => {
+        if (currency.code === action.currency) {
           return {
-            code,
-            flag,
-            balance: roundToTwoDecimals(balance - action.amount)
+            ...currency,
+            balance: roundToTwoDecimals(currency.balance - action.amount)
           }
-        } else return {flag, code, balance}
+        } else return currency
       })
   }
   return state

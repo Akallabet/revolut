@@ -29,14 +29,17 @@ export const CURRENCY_FLAGS = {
 export const AVAILABLE_CURRENCIES = [{
   code: EUR,
   flag: EurFlag,
+  symbol: CURRENCY_SYMBOLS[EUR],
   balance: 0
 }, {
   code: USD,
   flag: UsdFlag,
+  symbol: CURRENCY_SYMBOLS[USD],
   balance: 0
 }, {
   code: GBP,
   flag: GbpFlag,
+  symbol: CURRENCY_SYMBOLS[GBP],
   balance: 0
 }]
 

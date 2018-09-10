@@ -4,7 +4,7 @@ import {
 } from './pocket-actions'
 
 const defState = {
-  code: CURRENCY_CODES.EUR,
+  currency: CURRENCY_CODES.EUR,
   amount: 0
 }
 
@@ -13,7 +13,7 @@ const exchangeFromReducer = (state = defState, action) => {
     case SELECT_POCKET_CURRENCY:
       return {
         ...state,
-        code: action.currency
+        currency: action.currency
       }
   }
   return state

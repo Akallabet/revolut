@@ -15,3 +15,11 @@
 .currency-selection .ant-btn {
   color: #4CB2D4;
 }
+
+.currency-option span{
+  margin: 0 0 0 10px;
+}
+
+.currency-option span.code{
+  width: 40px;
+}

@@ -5,11 +5,11 @@ import {
   increaseCurrencyAmount
 } from './pocket-actions'
 
-const mapStateToProps = ({pocketCurrency}) => ({pocketCurrency})
+const mapStateToProps = ({availableCurrencies, pocketCurrency}) => ({availableCurrencies, pocketCurrency})
 const mapDispatchToProps = () => ({
   selectPocketCurrency: currency => selectPocketCurrency(currency),
-  increaseCurrencyAmount: ({code, amount}) => {
-    increaseCurrencyAmount({currency: code, amount})
+  increaseCurrencyAmount: ({currency, amount}) => {
+    increaseCurrencyAmount({currency, amount})
   }
 })
 

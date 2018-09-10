@@ -21,25 +21,19 @@ const CurrencySelection = ({currencies, currency, onCurrencySelection}) => {
       size='large'
     >
       {
-        currencies.map(({flag, code, balance}, i) => (
+        currencies.map(({flag, code, symbol, balance}, i) => [
+          <Menu.Divider key={`${i}-divider`}/>,
           <Menu.Item
             className='currency-option'
             key={i}
             onClick={() => onCurrencySelection(code)}
           >
-            <Row>
-              <Col span={6}>
-                <img src={flag}/>
-              </Col>
-              <Col span={8}>
-                {code}
-              </Col>
-              <Col span={10} style={{textAlign: 'right'}}>
-                {balance}
-              </Col>
-            </Row>
+            <img src={flag}/>
+            <span className='code'>{code}</span>
+            <span className='symbol'>{symbol}</span>
+            <span className='balance'>{balance}</span>
           </Menu.Item>
-        ))
+        ])
       }
     </Menu>
   )

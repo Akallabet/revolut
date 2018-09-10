@@ -1,7 +1,10 @@
 import React from 'react'
-import { object, func } from 'prop-types'
+import { array, object, func } from 'prop-types'
 import { Card, Row, Col, InputNumber, Button } from 'antd'
 import CurrencySelection from '../../components/currency-selection/currency-selection-container'
+
+import './pocket.css'
+
 /**
  *
  */
@@ -18,23 +21,33 @@ class Pocket extends React.Component {
     this.setState({amount})
   }
   render () {
-    const {pocketCurrency: {code}, selectPocketCurrency, increaseCurrencyAmount} = this.props
+    const {availableCurrencies, pocketCurrency: {currency}, selectPocketCurrency, increaseCurrencyAmount} = this.props
+    const currentCurrency = availableCurrencies.find(({code}) => code === currency)
     return (
-      <Card title={<span>Top up {code}</span>}>
+      <Card
+        className='pocket'
+        title={<span>{currentCurrency.symbol} {currentCurrency.balance} - {currentCurrency.code}</span>}
+      >
         <Row>
           <Col span={10}>
-            <CurrencySelection currency={code} onCurrencySelection={selectPocketCurrency}/>
+            <CurrencySelection currency={currency} onCurrencySelection={selectPocketCurrency}/>
           </Col>
           <Col span={10}>
             <InputNumber
               min={0}
-              max={1000}
+              max={10000}
+              placeholder={0}
               value={this.state.amount}
               onChange={this.setAmount.bind(this)}
             />
           </Col>
           <Col span={4}>
-            <Button onClick={() => increaseCurrencyAmount({code, amount: this.state.amount})}>Add</Button>
+            <Button
+              onClick={() => increaseCurrencyAmount({currency, amount: this.state.amount})}
+              disabled={isNaN(this.state.amount) || !this.state.amount}
+            >
+              Top Up
+            </Button>
           </Col>
         </Row>
       </Card>
@@ -43,6 +56,7 @@ class Pocket extends React.Component {
 }
 
 Pocket.propTypes = {
+  availableCurrencies: array,
   pocketCurrency: object,
   selectPocketCurrency: func,
   increaseCurrencyAmount: func

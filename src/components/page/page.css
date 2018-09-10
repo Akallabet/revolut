@@ -29,3 +29,16 @@
 .ant-btn.exchange-rate {
   color: #4CB2D4;
 }
+
+.ant-input-number {
+  font-size: 1.5rem;
+  width: 175px;
+}
+
+.ant-input-number-handler-wrap {
+  display: none;
+}
+
+.ant-input-number-input {
+  text-align: right;
+}

@@ -26,16 +26,6 @@
   background: #367ABD;
   color: #ffffff;
   border: 1px solid #367ABD;
-  font-size: 1.5rem;
-  width: 175px;
-}
-
-.exchange .ant-input-number-handler-wrap {
-  display: none;
-}
-
-.exchange .ant-input-number-input {
-  text-align: right;
 }
 
 .js-balance {
