@@ -10,6 +10,7 @@ const mapStateToProps = ({exchangeFrom: {currency, amount}, availableCurrencies,
     className: 'exchange-from',
     currency,
     amount,
+    sign: '-',
     availableCurrencies,
     currencySymbols
   })

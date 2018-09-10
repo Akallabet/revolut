@@ -6,6 +6,8 @@ import ExchangeFrom from '../../components/exchange-from/exchange-from-container
 import ExchangeTo from '../../components/exchange-to/exchange-to-container'
 import ExchangeRate from '../../components/exchange-rate/exchange-rate-container'
 import SwapCurrencies from '../../components/swap-currencies/swap-currencies-container'
+import ExchangeButton from '../../components/exchange-button/exchange-button-container'
+
 import './currency-exchange.css'
 
 /**
@@ -31,11 +33,13 @@ const CurrencyExchange = () => (
         className='rate exchange-list'
       >
         <List.Item>
-          <Col span={10}></Col>
-          <Col span={4} style={{textAlign: 'center'}}>
+          <Col span={6} style={{textAlign: 'center'}}>
             <SwapCurrencies />
           </Col>
-          <Col span={10} style={{textAlign: 'right'}}>
+          <Col span={12} style={{textAlign: 'center'}}>
+            <ExchangeButton />
+          </Col>
+          <Col span={6} style={{textAlign: 'right', lineHeight: '30px'}}>
             <ExchangeRate />
           </Col>
         </List.Item>

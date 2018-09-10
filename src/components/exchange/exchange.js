@@ -22,6 +22,7 @@ const Exchange = ({
   currencySymbols,
   currency,
   amount,
+  sign,
   className = '',
   onCurrencySelection = () => {},
   onAmountChange = () => {}
@@ -39,7 +40,7 @@ const Exchange = ({
           />
         </div>
         <div className='js-balance'>
-          {symbol} {balance}
+          balance {symbol} {balance}
         </div>
       </div>
       <div className='exchange-amount'>
@@ -50,6 +51,8 @@ const Exchange = ({
             min={0}
             onChange={onAmountChange}
             size={'large'}
+            formatter={value => !value || value === 0 ? '' : `${sign} ${value}`}
+            parser={value => value.replace(sign, '')}
           />
         </div>
       </div>
@@ -63,6 +66,7 @@ Exchange.propTypes = {
   currencySymbols: object.isRequired,
   currency: string.isRequired,
   amount: oneOfType([number, string]),
+  sign: string,
   balance: number,
   onCurrencySelection: func,
   onAmountChange: func

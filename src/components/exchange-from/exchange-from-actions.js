@@ -38,8 +38,6 @@ export const updateAmountFrom = amount => {
 export const convertAmountFrom = amount => {
   const {exchangeFrom, exchangeTo, exchangeRates} = store.getState()
   const conversionRate = exchangeRates[exchangeTo.currency][exchangeFrom.currency]
-  store.dispatch({
-    type: UPDATE_AMOUNT_FROM,
-    amount: amount ? roundToTwoDecimals(amount * conversionRate) : ''
-  })
+  const convertedAmount = roundToTwoDecimals(amount * conversionRate)
+  updateAmountFrom(convertedAmount)
 }

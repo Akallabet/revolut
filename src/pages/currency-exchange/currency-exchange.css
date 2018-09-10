@@ -10,6 +10,15 @@
   margin: auto;
 }
 
+.ant-list.rate .ant-btn {
+  background: #4CB2D4;
+  border: 1px solid #367ABD;
+}
+
+.ant-list.rate .ant-btn:hover, .ant-list.rate .ant-btn:focus {
+  color: #367ABD;
+}
+
 .ant-list-bordered {
   border: 1px solid #4CB2D4;
 }

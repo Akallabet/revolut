@@ -2,14 +2,14 @@ import { connect } from 'react-redux'
 import Pocket from './pocket'
 import {
   selectPocketCurrency,
-  setCurrencyAmount
+  increaseCurrencyAmount
 } from './pocket-actions'
 
 const mapStateToProps = ({pocketCurrency}) => ({pocketCurrency})
 const mapDispatchToProps = () => ({
   selectPocketCurrency: currency => selectPocketCurrency(currency),
-  setCurrencyAmount: ({code, amount}) => {
-    setCurrencyAmount({currency: code, amount})
+  increaseCurrencyAmount: ({code, amount}) => {
+    increaseCurrencyAmount({currency: code, amount})
   }
 })
 

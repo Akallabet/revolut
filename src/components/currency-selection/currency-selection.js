@@ -28,12 +28,14 @@ const CurrencySelection = ({currencies, currency, onCurrencySelection}) => {
             onClick={() => onCurrencySelection(code)}
           >
             <Row>
-              <Col span={2} />
-              <Col span={10}>
+              <Col span={6}>
                 <img src={flag}/>
               </Col>
-              <Col span={10}>
-                {code} {balance}
+              <Col span={8}>
+                {code}
+              </Col>
+              <Col span={10} style={{textAlign: 'right'}}>
+                {balance}
               </Col>
             </Row>
           </Menu.Item>

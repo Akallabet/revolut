@@ -17,7 +17,7 @@
   text-align: right;
 }
 
-.exchange .ant-btn {
+.ant-btn {
   background: #367ABD;
   font-size: 1.3rem;
 }
@@ -36,4 +36,8 @@
 
 .exchange .ant-input-number-input {
   text-align: right;
+}
+
+.js-balance {
+  padding: 0 15px;
 }

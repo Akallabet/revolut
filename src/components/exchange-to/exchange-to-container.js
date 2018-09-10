@@ -10,6 +10,7 @@ const mapStateToProps = ({exchangeTo: {currency, amount}, availableCurrencies, c
     className: 'exchange-to',
     currency,
     amount,
+    sign: '+',
     availableCurrencies,
     currencySymbols
   })

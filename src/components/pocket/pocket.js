@@ -18,7 +18,7 @@ class Pocket extends React.Component {
     this.setState({amount})
   }
   render () {
-    const {pocketCurrency: {code}, selectPocketCurrency, setCurrencyAmount} = this.props
+    const {pocketCurrency: {code}, selectPocketCurrency, increaseCurrencyAmount} = this.props
     return (
       <Card title={<span>Top up {code}</span>}>
         <Row>
@@ -34,7 +34,7 @@ class Pocket extends React.Component {
             />
           </Col>
           <Col span={4}>
-            <Button onClick={() => setCurrencyAmount({code, amount: this.state.amount})}>Add</Button>
+            <Button onClick={() => increaseCurrencyAmount({code, amount: this.state.amount})}>Add</Button>
           </Col>
         </Row>
       </Card>
@@ -45,7 +45,7 @@ class Pocket extends React.Component {
 Pocket.propTypes = {
   pocketCurrency: object,
   selectPocketCurrency: func,
-  setCurrencyAmount: func
+  increaseCurrencyAmount: func
 }
 
 export default Pocket
