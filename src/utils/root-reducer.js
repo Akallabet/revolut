@@ -4,6 +4,7 @@ import exchangeRates from '../components/exchange-rate/exchange-rate-reducer'
 import exchangeFrom from '../components/exchange-from/exchange-from-reducer'
 import exchangeTo from '../components/exchange-to/exchange-to-reducer'
 import pocketCurrency from '../components/pocket/pocket-reducer'
+import availableCurrencies from '../components/currency-selection/currency-selection-reducer'
 
 /**
  * Default store constants
@@ -13,8 +14,7 @@ import {
   POLLING,
   CURRENCY_CODES,
   CURRENCY_SYMBOLS,
-  CURRENCY_FLAGS,
-  AVAILABLE_CURRENCIES
+  CURRENCY_FLAGS
 } from './constants'
 
 /**
@@ -26,7 +26,7 @@ export default combineReducers({
   currencyCodes: () => CURRENCY_CODES,
   currencySymbols: () => CURRENCY_SYMBOLS,
   currencyFlags: () => CURRENCY_FLAGS,
-  availableCurrencies: () => AVAILABLE_CURRENCIES,
+  availableCurrencies,
   exchangeRates,
   exchangeFrom,
   exchangeTo,

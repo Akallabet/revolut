@@ -13,7 +13,7 @@ const exchangeFromReducer = (state = defState, action) => {
     case SELECT_POCKET_CURRENCY:
       return {
         ...state,
-        currency: action.currency
+        code: action.currency
       }
   }
   return state
