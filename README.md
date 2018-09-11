@@ -12,7 +12,7 @@
 
 * Application state persisted in localStorage
 
-![Alt text](src/assets/screenshots/revolut-exchange-screen.png?raw=true "Exchange Screen")
+![Alt text](src/assets/screenshots/exchange.png?raw=true "Exchange Screen")
 
 ## Usage
 
