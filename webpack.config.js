@@ -6,7 +6,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-// const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const extractCss = new ExtractTextPlugin('styles.css')
 const APP_DIR = path.resolve(__dirname, './src')
@@ -66,12 +65,7 @@ module.exports = {
             name: `${BUILD_DIR}/assets/iconfont/[name].[ext]`
           }
         }
-      },
-      // {
-      //   test: /\.(jpe?g|png)$/,
-      //   include: `${APP_DIR}/assets/images`,
-      //   loader: 'file-loader?name=public/assets/[name].[hash].[ext]'
-      // },
+      }
     ]
   },
   optimization: {

@@ -12,9 +12,7 @@ import availableCurrencies from '../components/currency-selection/currency-selec
 
 import {
   POLLING,
-  CURRENCY_CODES,
-  CURRENCY_SYMBOLS,
-  CURRENCY_FLAGS
+  CURRENCY_CODES
 } from './constants'
 
 /**
@@ -24,8 +22,6 @@ import {
 export default combineReducers({
   polling: () => POLLING,
   currencyCodes: () => CURRENCY_CODES,
-  currencySymbols: () => CURRENCY_SYMBOLS,
-  currencyFlags: () => CURRENCY_FLAGS,
   availableCurrencies,
   exchangeRates,
   exchangeFrom,

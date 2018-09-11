@@ -6,7 +6,6 @@ const app = express()
 
 const BUILD_DIR = path.resolve(__dirname, './build')
 
-app.get('/', (req, res) => res.sendFile(`${BUILD_DIR}/index.html`))
 app.use('/', express.static(BUILD_DIR))
 
 app.get('/api/rates/*', (req, res) => {
@@ -20,5 +19,7 @@ app.get('/api/rates/*', (req, res) => {
   })
     .then(({data}) => res.send(data))
 })
+
+app.get('/*', (req, res) => res.sendFile(`${BUILD_DIR}/index.html`))
 
 app.listen('9000', console.log('App listening on port 9000'))

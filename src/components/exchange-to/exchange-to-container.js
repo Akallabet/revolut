@@ -5,14 +5,13 @@ import {
   changeCurrency
 } from './exchange-to-actions'
 
-const mapStateToProps = ({exchangeTo: {currency, amount}, availableCurrencies, currencySymbols}) =>
+const mapStateToProps = ({exchangeTo: {currency, amount}, availableCurrencies}) =>
   ({
     className: 'exchange-to',
     currency,
     amount,
     sign: '+',
-    availableCurrencies,
-    currencySymbols
+    availableCurrencies
   })
 const mapDispatchToProps = () => ({
   onCurrencySelection: code => changeCurrency(code),

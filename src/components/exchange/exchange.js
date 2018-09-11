@@ -1,5 +1,5 @@
 import React from 'react'
-import { oneOfType, array, object, number, string, func } from 'prop-types'
+import { oneOfType, array, number, string, func } from 'prop-types'
 import { InputNumber } from 'antd'
 import CurrencySelection from '../currency-selection/currency-selection-container'
 import './exchange.css'
@@ -11,7 +11,6 @@ import './exchange.css'
  *
  * @param {string} className - add a custom class
  * @param {array} availableCurrencies - a list of all the available currencies
- * @param {object} currencySymbols - list of currency symbols in Unicode
  * @param {string} currency - the current currency code
  * @param {number} amount - the current amount
  * @param {function} onCurrencySelection - callback for currency selection
@@ -19,7 +18,6 @@ import './exchange.css'
 
 const Exchange = ({
   availableCurrencies,
-  currencySymbols,
   currency,
   amount,
   sign,
@@ -28,8 +26,7 @@ const Exchange = ({
   onAmountChange = () => {}
 }) => {
   const currentCurrency = availableCurrencies.find(({code}) => code === currency)
-  const {balance} = currentCurrency
-  const symbol = currencySymbols[currency]
+  const {symbol, balance} = currentCurrency
   return (
     <div className={`${className} exchange`}>
       <div className='exchange-currency'>
@@ -63,7 +60,6 @@ const Exchange = ({
 Exchange.propTypes = {
   className: string,
   availableCurrencies: array.isRequired,
-  currencySymbols: object.isRequired,
   currency: string.isRequired,
   amount: oneOfType([number, string]),
   sign: string,

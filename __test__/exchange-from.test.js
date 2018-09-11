@@ -12,11 +12,10 @@ describe('Exchange From', () => {
   const props = {
     currency: 'EUR',
     amount: '',
-    availableCurrencies,
-    currencySymbols: {}
+    availableCurrencies
   }
   const mockStore = configureStore()
-  let store, container
+  let store
 
   describe('Exchange Component', () => {
     let wrapper

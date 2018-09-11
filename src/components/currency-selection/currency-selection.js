@@ -1,6 +1,6 @@
 import React from 'react'
 import { array, string, func } from 'prop-types'
-import {Button, Dropdown, Menu, Icon, Row, Col} from 'antd'
+import {Button, Dropdown, Menu, Icon} from 'antd'
 import './currency-selection.css'
 
 /**
@@ -30,8 +30,7 @@ const CurrencySelection = ({currencies, currency, onCurrencySelection}) => {
           >
             <img src={flag}/>
             <span className='code'>{code}</span>
-            <span className='symbol'>{symbol}</span>
-            <span className='balance'>{balance}</span>
+            <span className='balance'>{symbol} {balance}</span>
           </Menu.Item>
         ])
       }
