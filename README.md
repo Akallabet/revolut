@@ -10,9 +10,9 @@
 
 * Swap currencies
 
-* Application state saved in localStorage
+* Application state persisted in localStorage
 
-![Alt text](assets/screenshots/revolut-exchange-screen.png?raw=true "Exchange Screen")
+![Alt text](src/assets/screenshots/revolut-exchange-screen.png?raw=true "Exchange Screen")
 
 ## Usage
 

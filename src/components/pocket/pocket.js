@@ -21,8 +21,20 @@ class Pocket extends React.Component {
   setAmount (amount) {
     this.setState({amount})
   }
+  onKeyDown ({key}) {
+    if (key === 'Enter' && this._isValidAmount()) {
+      this._increaseCurrencyAmount()
+    }
+  }
+  _increaseCurrencyAmount () {
+    const {pocketCurrency: {currency}, increaseCurrencyAmount} = this.props
+    increaseCurrencyAmount({currency, amount: this.state.amount})
+  }
+  _isValidAmount () {
+    return !(isNaN(this.state.amount) || !this.state.amount)
+  }
   render () {
-    const {availableCurrencies, pocketCurrency: {currency}, selectPocketCurrency, increaseCurrencyAmount} = this.props
+    const {availableCurrencies, pocketCurrency: {currency}, selectPocketCurrency} = this.props
     const currentCurrency = availableCurrencies.find(({code}) => code === currency)
     return (
       <Card
@@ -40,12 +52,13 @@ class Pocket extends React.Component {
               placeholder={0}
               value={this.state.amount || ''}
               onChange={this.setAmount.bind(this)}
+              onKeyDown={this.onKeyDown.bind(this)}
             />
           </Col>
           <Col span={2}>
             <Button
-              onClick={() => increaseCurrencyAmount({currency, amount: this.state.amount})}
-              disabled={isNaN(this.state.amount) || !this.state.amount}
+              onClick={this._increaseCurrencyAmount.bind(this)}
+              disabled={!this._isValidAmount()}
               icon='plus-circle'
             />
           </Col>
