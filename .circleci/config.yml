@@ -33,7 +33,7 @@ jobs:
       - image: circleci/node:8.9.4
     working_directory: ~/repo
     environment:
-      - SOURCE_BRANCH: ci
+      - SOURCE_BRANCH: master
       - TARGET_BRANCH: gh-pages
     steps:
       - setup_remote_docker
@@ -45,7 +45,7 @@ jobs:
       - run:
           name: Deploy to gh_pages
           command: |
-            if [ $CIRCLE_BRANCH == "ci" ]; then
+            if [ $CIRCLE_BRANCH == "master" ]; then
               git config --global user.email grazianos86@gmail.com
               git config --global user.name Akallabet
 
@@ -82,4 +82,4 @@ workflows:
           filters:
             branches:
               only:
-                - ci
+                - master
