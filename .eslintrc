@@ -20,5 +20,8 @@
           "jest": true
       }
     }
-  ]
+  ],
+  "rules": {
+    "no-process-env": 0
+  }
 }
