@@ -9,7 +9,7 @@ const BUILD_DIR = path.resolve(__dirname, './build')
 app.use('/', express.static(BUILD_DIR))
 
 app.get('/api/rates/*', (req, res) => {
-  const params = req.originalUrl.replace('/api/rates/', '')
+  const params = req.originalUrl.replace(req.path, '')
   axios.request({
     url: `https://xecdapi.xe.com/v1/historic_rate.json/${params}`,
     method: 'get',

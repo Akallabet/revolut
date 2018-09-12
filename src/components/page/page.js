@@ -15,7 +15,6 @@ const Header = Layout.Header
  * @param {component} children - Children Content component
  */
 export const Page = ({children, location}) => {
-  console.log(routes, location)
   const defaultRoute = routes.find(({path}) => path === location.pathname)
   return (
     <Layout>

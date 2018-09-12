@@ -7,7 +7,7 @@ const roundDecimals = decimals => number => Math.round(number * decimals) / deci
 export const roundToFourDecimals = roundDecimals(10000)
 export const roundToTwoDecimals = roundDecimals(100)
 
-const instance = axios.create({baseURL: '/api/rates/'})
+const instance = axios.create({baseURL: `${process.env.BASE_NAME || ''}/api/rates/`})
 
 const extractRates = currencies => ({data: {to}}) => {
   const rates = {}

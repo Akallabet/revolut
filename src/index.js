@@ -8,7 +8,7 @@ import './override.less'
 
 render(
   <Provider store={store}>
-    <Router>
+    <Router basename={process.env.BASE_NAME}>
       <App />
     </Router>
   </Provider>,

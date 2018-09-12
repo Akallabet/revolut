@@ -1,4 +1,5 @@
 /* eslint-env node */
+const webpack = require('webpack')
 const path = require('path')
 const fs = require('fs')
 const lessToJs = require('less-vars-to-js')
@@ -84,6 +85,11 @@ module.exports = {
       template: `${APP_DIR}/index.html`
     }),
     new CleanWebpackPlugin([BUILD_DIR]),
+    new webpack.DefinePlugin({
+      'process.env': {
+        BASE_NAME: JSON.stringify(process.env.BASE_NAME)
+      }
+    }),
     extractCss
   ],
   resolve: {

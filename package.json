@@ -8,6 +8,7 @@
     "lint:fix": "eslint src --ext .js -c .eslintrc --fix",
     "start": "webpack-dev-server",
     "build": "webpack -p --config webpack.config.js",
+    "build:ci": "BASE_NAME=/revolut webpack -p --config webpack.config.js",
     "server": "node ./server.js",
     "start:local": "npm run build && npm run server",
     "test": "jest",
