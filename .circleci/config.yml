@@ -22,7 +22,7 @@ jobs:
           command: npm run test
       - run:
           name: Build project
-          command: npm run build
+          command: npm run build:ci
       - persist_to_workspace:
           root: ./
           paths:
