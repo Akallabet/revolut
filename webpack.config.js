@@ -4,7 +4,7 @@ const path = require('path')
 const fs = require('fs')
 const lessToJs = require('less-vars-to-js')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
@@ -90,6 +90,10 @@ module.exports = {
         BASE_NAME: JSON.stringify(process.env.BASE_NAME)
       }
     }),
+    new CopyWebpackPlugin([{
+      from: `${APP_DIR}/404.html`,
+      to: BUILD_DIR
+    }]),
     extractCss
   ],
   resolve: {
